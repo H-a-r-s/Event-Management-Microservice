@@ -36,13 +36,12 @@
 			<artifactId>spring-cloud-starter-gateway</artifactId>
 		</dependency>
 
-		<!-- Later: Eureka -->
-		<!--
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        -->
+
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

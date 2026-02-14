@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 
-@FeignClient(name = "registration-service", url = "http://localhost:8080")
+@FeignClient(name = "registration-service")
 public interface RegistrationClient {
 
     @PutMapping("/api/register/{id}/confirm")
