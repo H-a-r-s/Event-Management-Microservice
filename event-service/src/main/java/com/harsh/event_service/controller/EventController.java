@@ -29,4 +29,10 @@ public class EventController {
     public EventResponse getById(@PathVariable Long id) {
         return service.getById(id);
     }
+
+    @PutMapping("/{id}/decrease-seat")
+    public EventResponse decreaseSeat(@PathVariable Long id) {
+        return service.decreaseSeat(id);
+    }
+
 }

@@ -53,4 +53,16 @@ public class EventService {
                 e.getCreatedBy()
         );
     }
+
+    public EventResponse decreaseSeat(Long id) {
+        Event e = repo.findById(id).orElseThrow(() -> new RuntimeException("Event not found"));
+
+        if (e.getAvailableSeats() <= 0) {
+            throw new RuntimeException("No seats available");
+        }
+
+        e.setAvailableSeats(e.getAvailableSeats() - 1);
+        return toResponse(repo.save(e));
+    }
+
 }

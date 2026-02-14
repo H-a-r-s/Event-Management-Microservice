@@ -15,6 +15,10 @@ public class PaymentRequestDto {
     @NotNull
     private Double amount;
 
+    @NotNull
+    private Long eventId;
+
+
     // For mock: true -> SUCCESS, false -> FAILED
     @NotNull
     private Boolean success;

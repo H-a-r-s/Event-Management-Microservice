@@ -19,6 +19,7 @@ public class PaymentService {
 
     // Registration confirm endpoint
     private static final String REG_CONFIRM_URL = "http://localhost:8084/api/register/";
+    private static final String EVENT_SEAT_URL   = "http://localhost:8082/api/events/";
 
     public PaymentResponseDto pay(PaymentRequestDto req) {
 
@@ -38,6 +39,8 @@ public class PaymentService {
         // If SUCCESS -> confirm registration
         if (status == PaymentStatus.SUCCESS) {
             restTemplate.put(REG_CONFIRM_URL + req.getRegistrationId() + "/confirm", null);
+
+            restTemplate.put(EVENT_SEAT_URL + req.getEventId() + "/decrease-seat", null);
         }
 
         return mapToResponse(saved);
