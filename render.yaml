@@ -2,7 +2,7 @@ services:
   - type: pserv
     name: eureka
     runtime: docker
-    rootDir: eureka
+    rootDir: service-registry
     plan: free
     envVars:
       - key: PORT
